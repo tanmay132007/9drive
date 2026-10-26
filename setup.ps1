@@ -41,7 +41,6 @@ if (-not (Test-Path -LiteralPath $backendEnv)) {
         "ACCESS_TOKEN_TTL_SECONDS=900"
         "REFRESH_TOKEN_TTL_DAYS=30"
         "MAX_UPLOAD_BYTES=5368709120"
-        "RECAPTCHA_SECRET_KEY=`"`""
         "GOOGLE_CLIENT_ID=`"`""
         "GOOGLE_CLIENT_SECRET=`"`""
         "GOOGLE_REDIRECT_URI=`"http://localhost:4000/connected-accounts/google/callback`""
@@ -52,7 +51,6 @@ if (-not (Test-Path -LiteralPath $backendEnv)) {
 if (-not (Test-Path -LiteralPath $frontendEnv)) {
     @(
         "VITE_API_URL=http://localhost:4000"
-        "VITE_RECAPTCHA_SITE_KEY="
     ) | Set-Content -LiteralPath $frontendEnv -Encoding UTF8
     Write-Host "Created frontend/.env"
 }

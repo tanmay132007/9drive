@@ -34,7 +34,6 @@ if [ ! -f "$backend_dir/.env" ]; then
     printf 'ACCESS_TOKEN_TTL_SECONDS=900\n'
     printf 'REFRESH_TOKEN_TTL_DAYS=30\n'
     printf 'MAX_UPLOAD_BYTES=5368709120\n'
-    printf 'RECAPTCHA_SECRET_KEY=""\n'
     printf 'GOOGLE_CLIENT_ID=""\n'
     printf 'GOOGLE_CLIENT_SECRET=""\n'
     printf 'GOOGLE_REDIRECT_URI="http://localhost:4000/connected-accounts/google/callback"\n'
@@ -45,7 +44,6 @@ fi
 if [ ! -f "$frontend_dir/.env" ]; then
   {
     printf 'VITE_API_URL=http://localhost:4000\n'
-    printf 'VITE_RECAPTCHA_SITE_KEY=\n'
   } > "$frontend_dir/.env"
   echo "Created frontend/.env"
 fi
